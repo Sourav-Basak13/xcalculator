@@ -11,15 +11,19 @@ export function evaluateInfix(expression) {
   };
 
   const applyOp = (op, b, a) => {
-    switch (op) {
-      case "+":
-        return a + b;
-      case "-":
-        return a - b;
-      case "*":
-        return a * b;
-      case "/":
-        return a / b;
+    if (b && a) {
+      switch (op) {
+        case "+":
+          return a + b;
+        case "-":
+          return a - b;
+        case "*":
+          return a * b;
+        case "/":
+          return a / b;
+      }
+    } else {
+      return "Error";
     }
   };
 
@@ -47,5 +51,5 @@ export function evaluateInfix(expression) {
     values.push(applyOp(op, b, a));
   }
 
-  return Math.trunc(values[0]);
+  return values[0] !== "Error" ? Math.trunc(values[0]) : values[0];
 }
