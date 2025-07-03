@@ -11,7 +11,7 @@ export function evaluateInfix(expression) {
   };
 
   const applyOp = (op, b, a) => {
-    if (b && a) {
+    if (typeof b !== "undefined" && typeof a !== "undefined") {
       switch (op) {
         case "+":
           return a + b;
