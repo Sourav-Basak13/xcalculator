@@ -32,7 +32,7 @@ function App() {
     >
       <h1>React Calculator</h1>
       <input type="text" name="calculator_input" value={inputStr} readOnly />
-      <div className="cal_result">{result}</div>
+      <p className="cal_result">{result}</p>
       <span className="btn_wrapper">
         {[7, 8, 9, "+", 4, 5, 6, "-", 1, 2, 3, "*", "C", 0, "=", "/"].map(
           (_ele) => (
